@@ -1,0 +1,100 @@
+.container {
+    display: flex;
+    width: 100%;
+    height: 93vh;
+}
+
+.draggable-option {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.col-left {
+    display: table-cell;
+    background-color: #212c36;
+    width: 20%;
+    padding: 5px;
+    overflow-y: auto;
+    text-overflow: ellipsis;
+}
+
+.col-sm {
+    display: table-cell;
+    padding: 5px;
+    width: 10%;
+}
+
+.col-right {
+    display: table-cell;
+    background-color: #0c111e;
+    width: 80%;
+    padding: 5px;
+    overflow-y: auto;
+}
+
+.col-right:active {
+    opacity: 0.9;
+}
+
+.col-lg {
+    display: table-cell;
+    padding: 5px;
+    width: 90%;
+}
+
+.my-5 {
+    margin: 5px 0;
+    width: 100%;
+}
+
+.col {                                     /* Left Bars   */
+    display: flex;
+    background-color: #b0b0c9;
+    padding: 8px 0;
+    border-radius: 5px;
+    cursor: move;
+}
+
+mat-label {
+    padding: 2px;
+    width: 100%;
+    font-weight: bold;
+}
+
+.mat-expansion-panel-header-description {
+    justify-content: space-between;
+    align-items: center;
+}
+
+mat-icon {
+    color: gray;
+}
+
+a {
+    cursor: pointer;
+}
+
+.btn-preview {
+    position: absolute;
+    bottom: 40px;
+    right: 40px;
+    z-index: 1000;
+}
+
+@media only screen and (min-width: 1260px) {
+    .col-left {
+        width: 12%;
+    }
+
+    .col-right {
+        width: 88%;
+    }
+
+.spinner-div{
+    z-index: 1;
+    margin: auto;
+    width: 99%;
+    height: 99%;
+    }
+}

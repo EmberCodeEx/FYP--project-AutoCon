@@ -1,0 +1,52 @@
+<mat-accordion cdkDragLockAxis="y" cdkDrag>
+    <mat-expansion-panel>
+        <mat-expansion-panel-header cdkDragHandle>
+            <mat-panel-title>
+                {{item.name}}
+            </mat-panel-title>
+
+            <mat-panel-description>
+                <div></div>
+                <div>
+                    <a (click)="updateItem()">
+                        <mat-icon color="primary" matTooltip="Save changes...">done</mat-icon>
+                    </a>
+                    <a (click)="deleteItem()">
+                        <mat-icon color="warn" matTooltip="Delete item...">clear</mat-icon>
+                    </a>
+                </div>
+            </mat-panel-description>
+        </mat-expansion-panel-header>
+
+        <div class="row">
+            <mat-form-field>
+                <mat-label>{{item.name}} Identifier...</mat-label>
+                <input matInput type="text" [(ngModel)]="item.identifier">
+            </mat-form-field>
+        </div>
+        
+        <div class="row icon">
+            <div>Members</div>
+            <div><mat-icon (click)="addMember()">add_box</mat-icon></div>
+        </div>
+
+        <div class="member" *ngFor="let member of item.members">
+            <mat-form-field>
+                <mat-label>Member Type</mat-label>
+                <input type="text" matInput [matAutocomplete]="auto" [(ngModel)]="member.type">
+                <mat-autocomplete #auto="matAutocomplete">
+                    <mat-option *ngFor="let type of types" [value]="type">{{type}}</mat-option>
+                </mat-autocomplete>
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-label>Member Identifier</mat-label>
+                <input matInput [(ngModel)]="member.identifier">
+            </mat-form-field>
+            <div class="icon">
+                <mat-icon (click)="updateMember(member)" color="primary" matTooltip="Update item...">done</mat-icon>
+                <mat-icon (click)="removeMember(member)" color="warn" matTooltip="Delete item...">clear</mat-icon>
+            </div>
+        </div>
+    </mat-expansion-panel>
+</mat-accordion>

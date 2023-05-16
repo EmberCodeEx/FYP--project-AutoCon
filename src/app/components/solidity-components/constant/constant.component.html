@@ -1,0 +1,27 @@
+<div class="content" cdkDragLockAxis="y" cdkDrag>
+    <div>
+        <mat-form-field>
+            <mat-label>Constant Name</mat-label>
+            <input matInput type="text" [(ngModel)]="item.identifier">
+        </mat-form-field>
+        
+        <mat-form-field>
+            <mat-label>Constant Type</mat-label>
+            <input matInput type="text" [(ngModel)]="item.type">
+        </mat-form-field>
+        
+        <mat-form-field>
+            <mat-label>Constant Value</mat-label>
+            <input matInput type="text" [(ngModel)]="item.value">
+        </mat-form-field>
+    </div>
+    
+    <div class="col">
+        <a (click)="updateItem()">
+            <mat-icon color="primary" matTooltip="Save changes...">done</mat-icon>
+        </a>
+        <a (click)="deleteItem()">
+            <mat-icon color="warn" matTooltip="Delete item...">clear</mat-icon>
+        </a>
+    </div>
+</div>

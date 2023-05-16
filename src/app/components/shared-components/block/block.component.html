@@ -1,0 +1,60 @@
+<mat-accordion>
+    <mat-expansion-panel>
+        <mat-expansion-panel-header>
+            <mat-panel-title >
+                <mat-label>{{item?.name}}</mat-label>
+            </mat-panel-title>
+        </mat-expansion-panel-header>
+        <div class="content">
+            <div class="row">
+                <div><b>Expressions</b></div>
+                <div><b>Block</b></div>
+                <div></div>
+              </div>
+              
+            
+              <mat-drawer-container class="container">
+                <mat-drawer 
+                    #left_drawer 
+                    mode="side"
+                    id="s{{item?.uuid}}"
+                    cdkDropList
+                    [cdkDropListData]="expressions || []"
+                    cdkDropListConnectedTo="{{item?.uuid}}"
+                    (cdkDropListDropped)="drop($event)">
+                    <div class="my-5" *ngFor="let s of expressions" cdkDrag>
+                        <div class="col">
+                            <mat-icon>drag_indicator</mat-icon>
+                            <mat-label>{{s}}</mat-label>
+                        </div>
+                    </div>
+                </mat-drawer>
+            
+                <mat-drawer-content>
+                    <div class="left" (mouseenter)="left_drawer.toggle()">
+                        <mat-icon>drag_handle</mat-icon>
+                    </div>
+                    <div 
+                        class="center"
+                        id="{{item?.uuid}}"
+                        cdkDropList
+                        [cdkDropListData]="item?.expressions || []"
+                        cdkDropListConnectedTo="{{item?.uuid}}"
+                        (cdkDropListDropped)="drop($event)" >
+                        <div *ngFor="let e of item?.expressions">
+                            <app-statement *ngIf="e.name.includes('Statement')" [item]="e" (deleteItemEvent)="deleteBlockItem($event)" (updateItemEvent)="updateBlockItem($event)"></app-statement>
+                            <app-expression *ngIf="e.name == 'Expression'" [item]="e" (deleteItemEvent)="deleteBlockItem($event)" (updateItemEvent)="updateBlockItem($event)"></app-expression>
+                            <app-continue-statement *ngIf="e.name == 'Continue'" [item]="e" (deleteItemEvent)="deleteBlockItem($event)" (updateItemEvent)="updateBlockItem($event)"></app-continue-statement>
+                            <app-break-statement *ngIf="e.name == 'Break'" [item]="e" (deleteItemEvent)="deleteBlockItem($event)" (updateItemEvent)="updateBlockItem($event)"></app-break-statement>
+                            <app-try-catch-statement *ngIf="e.name == 'Try-Catch'" [item]="e" (deleteItemEvent)="deleteBlockItem($event)" (updateItemEvent)="updateBlockItem($event)"></app-try-catch-statement>
+                            <app-return-statement *ngIf="e.name == 'Return'" [item]="e" (deleteItemEvent)="deleteBlockItem($event)" (updateItemEvent)="updateBlockItem($event)"></app-return-statement>
+                            <app-variable *ngIf="e.name == 'Variable'" [item]="e" (deleteItemEvent)="deleteBlockItem($event)" (updateItemEvent)="updateBlockItem($event)"></app-variable>
+                        </div>
+                    </div>
+                </mat-drawer-content>
+              </mat-drawer-container>
+        </div>
+    </mat-expansion-panel>
+</mat-accordion>
+
+

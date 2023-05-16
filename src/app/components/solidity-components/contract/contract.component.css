@@ -1,0 +1,43 @@
+mat-expansion-panel-header {
+    border: 1px solid gray;
+      background-color: #6c8c9d;
+}
+
+mat-panel-description {
+    justify-content: space-between;
+    align-items: center;
+    /*  background-color: #6c8c9d;*/
+   
+}
+
+mat-panel-description div {
+    display: flex;
+    /*  background-color: #6c8c9d;*/
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 5px 5px 60px 5px;
+    margin-top: 10px;
+  /*   background-color: rgba(63, 99, 111, 0.3); */
+    border-radius: 5px;
+    /*  background-color: #6c8c9d;*/
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    /*  background-color: #6c8c9d;*/
+}
+
+mat-checkbox {
+    margin-top: 10px;
+     /*  background-color: #6c8c9d;*/
+}
+
+.content:hover {
+    background-color: #687a7eec;
+}
+

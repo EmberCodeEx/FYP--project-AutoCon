@@ -1,0 +1,36 @@
+<p-toolbar>
+  <div class="p-toolbar-group-left">
+      <!-- <p-button icon="pi pi-list" (click)="drawer.toggle()" class="p-button-outlined"></p-button> -->
+      <div class="spacer-div"></div>
+      <label for="notice">AutoCon to be used for only Testnet </label>
+  </div>
+  <div>
+    <label for="title" style="font-weight: 700;">AutoCon</label>
+  </div>
+  <div class="p-toolbar-group-right">
+    <label style="color: rgb(105, 6, 6);" for="wallet" *ngIf="launchedApp"><i class="pi pi-wallet"></i> {{wallet}}</label>
+    <div class="spacer-div"></div>
+    <label for="chain" *ngIf="!launchedApp"> </label>
+    <div class="spacer-div"></div>
+    <p-dropdown [options]="chains" [(ngModel)]="chain" optionLabel="name" *ngIf="!launchedApp"></p-dropdown>
+    <div class="spacer-div"></div>
+    <p-button icon="pi pi-code" label="Launch AutoCon IDE" (click)="launchApp()" *ngIf="!launchedApp" class="p-button-outlined"></p-button>
+    <div class="spacer-div"></div>
+  </div>
+</p-toolbar>
+
+<mat-drawer-container [hasBackdrop]="false">
+  <mat-drawer #drawer mode="side">
+    <a>Contracts</a>
+    <a>New Contract</a>
+  </mat-drawer>
+  
+  <mat-drawer-content>
+    <div style="text-align: center; " *ngIf="!launchedApp">
+      <app-home style="text-align: center;"></app-home>
+    </div>
+    <app-create-solidity-file *ngIf="launchedApp"></app-create-solidity-file>
+  </mat-drawer-content>
+</mat-drawer-container>
+<p-confirmDialog [closable]="false" key="connectionRequest"></p-confirmDialog>
+<p-confirmDialog [closable]="false" key="invalidConnection"></p-confirmDialog>

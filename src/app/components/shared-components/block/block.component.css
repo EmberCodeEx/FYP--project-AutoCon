@@ -1,0 +1,87 @@
+mat-expansion-panel-header {
+    border: 1px solid gray;
+}
+
+mat-drawer-container {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    border: 1px solid rgb(97, 161, 183);
+    border-radius: 5px;
+    min-height: 330px;
+}
+
+mat-drawer {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 140px;
+    padding: 5px;
+    height: 100%;
+}
+
+mat-drawer-content {
+    display: flex;
+    justify-content: space-between;
+    min-height: 330px;
+}
+
+.left {
+    border-right: 1px solid rgb(66, 102, 152);
+}
+
+.right {
+    border-left: 1px solid rgb(66, 96, 157);
+}
+
+.left mat-icon, .right mat-icon {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    position: relative;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+.center {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: 100%;
+    padding: 5px;
+}
+
+button {
+    border-radius: 5px;
+    width: 100%;
+    margin-bottom: 5px;
+}
+
+.my-5 {
+    margin: 5px 0;
+    width: 100%;
+}
+
+.col {
+    display: flex;
+    background-color: #b0b0c9;
+    padding: 8px 0;
+    border-radius: 5px;
+    cursor: move;
+}
+
+.col mat-label {
+    padding: 2px;
+    width: 100%;
+    font-weight: bold;
+}
+
+mat-icon {
+    color: gray;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+}

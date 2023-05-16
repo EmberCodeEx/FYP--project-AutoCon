@@ -1,0 +1,45 @@
+mat-expansion-panel-header {
+    border: 1px solid gray;
+}
+
+mat-panel-description {
+    justify-content: space-between;
+    align-items: center;
+}
+
+mat-panel-description div {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.icon {
+    padding: 5px;
+}
+
+.row-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    border: 1px solid gray;
+    border-radius: 5px;
+}
+
+.member {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    margin: 5px;
+    border: 1px solid gray;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.member b {
+    margin-top: 4px;
+}

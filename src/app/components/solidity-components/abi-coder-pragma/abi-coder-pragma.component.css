@@ -1,0 +1,28 @@
+.content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #6c8c9d;
+    border-radius: 5px;
+    padding: 0 10px 0 24px;
+    border: 1px solid gray;
+}
+
+.content:hover {
+    background-color: #687a7eec;
+}
+
+.content div {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    margin: 10px 0 5px 0;
+}
+
+.content .col {
+    gap: 0;
+}
+
+mat-form-field {
+    height: 44px;
+}
